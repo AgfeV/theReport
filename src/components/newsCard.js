@@ -7,6 +7,8 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import { Paper, Grid } from '@material-ui/core';
+import headlinePhoto from './images/s2kfje4uqfz41.jpg'
 
 const useStyles = makeStyles({
   root: {
@@ -15,6 +17,9 @@ const useStyles = makeStyles({
   media: {
     height: 200,
   },
+  media2: {
+    height: 20,
+  }
 });
 
 export default function MediaCard({ countryName, flag, newsData }) {
@@ -38,17 +43,22 @@ export default function MediaCard({ countryName, flag, newsData }) {
         {
           newsData.map( news => (
             <CardContent>
-              <Typography variant="body2" color="textSecondary" component="p">
-                {news.title}
+              <Paper elevation={4}>
+                <CardMedia  className={classes.media2} image={headlinePhoto}/>
+                <CardActionArea>
+                  <Typography variant="body2" color="textSecondary" component="p">
+                  {news.title}
+                  </Typography>
+                </CardActionArea>
                 <CardActions>
-                  <Button size="small" color="default" variant="outlined">
+                  <Button size="small" color="secondary" variant="outlined">
                     Share
                   </Button>
-                  <Button size="small" color="default" variant="outlined">
+                  <Button size="small" color="primary" variant="outlined">
                       Learn More
                   </Button>
                 </CardActions>
-              </Typography>
+              </Paper>
           </CardContent>   
           ))
         }
