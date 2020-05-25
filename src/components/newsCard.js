@@ -26,7 +26,7 @@ export default function MediaCard({ countryName, flag, newsData }) {
   const classes = useStyles();
 
   return (
-    <Card className={classes.root}>
+    <Card className={classes.root} raised={true} elevation={20}>
     
         <CardMedia
           className={classes.media}
